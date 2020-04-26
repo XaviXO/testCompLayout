@@ -36,8 +36,21 @@ class FeaturedCell: UICollectionViewCell, SelfConfiguringCell {
         imageView.layer.cornerRadius = 5
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
+        
+        let stackView = UIStackView(arrangedSubviews: [tagline, name, subtitle, imageView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        contentView.addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        
+        stackView.setCustomSpacing(10, after: subtitle)
     }
-    
     
     func configure(with app: App) {
         tagline.text = app.tagline.uppercased()
