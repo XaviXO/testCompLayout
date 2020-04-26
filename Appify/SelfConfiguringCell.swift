@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol SelfConfiguringCell {
+    static var reusableIdentifier: String { get }
+    func configure(with app: App);
+}
