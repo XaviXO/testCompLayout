@@ -52,4 +52,8 @@ class AppsViewController: UIViewController {
         }
         dataSource?.apply(snapshot)
     }
+    
+    func createFeaturedSection(using section: Section) -> NSCollectionLayoutSection{
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+    }
 }
