@@ -17,7 +17,7 @@ class AppsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .systemBackground
         view.addSubview(collectionView)
@@ -53,7 +53,29 @@ class AppsViewController: UIViewController {
         dataSource?.apply(snapshot)
     }
     
+    func createCompositionalLayout() -> UICollectionViewLayout{
+        let layout = UICollectionViewCompositionalLayout {
+            sectionIndex, layoutEnviorment in
+            let section = self.sections[sectionIndex]
+            switch section.type {
+            default:
+                return self.createFeaturedSection(using: section)
+            }
+        }
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 20
+        layout.configuration = config
+        return layout
+    }
+    
     func createFeaturedSection(using section: Section) -> NSCollectionLayoutSection{
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+        layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(350))
+        let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
+        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+        layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
+        return layoutSection
     }
 }
