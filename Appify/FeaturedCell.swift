@@ -37,18 +37,20 @@ class FeaturedCell: UICollectionViewCell, SelfConfiguringCell {
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
         
-        let stackView = UIStackView(arrangedSubviews: [tagline, name, subtitle, imageView])
+        let stackView = UIStackView(arrangedSubviews: [seperator, tagline, name, subtitle, imageView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         contentView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
+            seperator.heightAnchor.constraint(equalToConstant: 1),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
+        stackView.setCustomSpacing(10, after: seperator)
         stackView.setCustomSpacing(10, after: subtitle)
     }
     

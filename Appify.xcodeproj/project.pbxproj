@@ -24,6 +24,8 @@
 		11CCF1D224543D35007D04D6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CCF1D124543D35007D04D6 /* SearchViewController.swift */; };
 		11CCF1D424543EB9007D04D6 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CCF1D324543EB9007D04D6 /* SelfConfiguringCell.swift */; };
 		11CCF1D624543F8B007D04D6 /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CCF1D524543F8B007D04D6 /* FeaturedCell.swift */; };
+		11CCF1D82456C20F007D04D6 /* MediumTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CCF1D72456C20F007D04D6 /* MediumTableCell.swift */; };
+		11CCF1DA2456CF50007D04D6 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CCF1D92456CF50007D04D6 /* SectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		11CCF1D124543D35007D04D6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		11CCF1D324543EB9007D04D6 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
 		11CCF1D524543F8B007D04D6 /* FeaturedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCell.swift; sourceTree = "<group>"; };
+		11CCF1D72456C20F007D04D6 /* MediumTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumTableCell.swift; sourceTree = "<group>"; };
+		11CCF1D92456CF50007D04D6 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 				11CCF1C3245433F5007D04D6 /* AppsViewController.swift */,
 				11CCF1D324543EB9007D04D6 /* SelfConfiguringCell.swift */,
 				11CCF1D524543F8B007D04D6 /* FeaturedCell.swift */,
+				11CCF1D72456C20F007D04D6 /* MediumTableCell.swift */,
+				11CCF1D92456CF50007D04D6 /* SectionHeader.swift */,
 				11CCF1CB24543A3D007D04D6 /* ArcadeViewController.swift */,
 				11CCF1CD24543AA7007D04D6 /* Bundle-Decodable.swift */,
 				11CCF1CF24543CD2007D04D6 /* GamesViewController.swift */,
@@ -296,8 +302,10 @@
 				11CCF1CE24543AA7007D04D6 /* Bundle-Decodable.swift in Sources */,
 				11CCF1D624543F8B007D04D6 /* FeaturedCell.swift in Sources */,
 				11CCF1D424543EB9007D04D6 /* SelfConfiguringCell.swift in Sources */,
+				11CCF1D82456C20F007D04D6 /* MediumTableCell.swift in Sources */,
 				11CCF1C82454372A007D04D6 /* App.swift in Sources */,
 				116B2D19245049A900F40978 /* SceneDelegate.swift in Sources */,
+				11CCF1DA2456CF50007D04D6 /* SectionHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
