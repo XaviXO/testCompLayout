@@ -20,6 +20,15 @@ class SectionHeader: UICollectionReusableView {
         let seperator = UIView(frame: .zero)
         seperator.translatesAutoresizingMaskIntoConstraints = false
         seperator.backgroundColor = .quaternaryLabel
+        
+        title.textColor = .label
+        title.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 22, weight: .bold))
+        subtitle.textColor = .secondaryLabel
+        
+        let stackView = UIStackView(arrangedSubviews: [seperator, title, subtitle])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        
     }
     
     required init?(coder: NSCoder) {
