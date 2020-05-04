@@ -25,6 +25,8 @@ class SmallTableCell: UICollectionViewCell, SelfConfiguringCell {
         
         let stackView = UIStackView(arrangedSubviews: [imageView, name])
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.alignment = .center
+        stackView.spacing = 20
         contentView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
