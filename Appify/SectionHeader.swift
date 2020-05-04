@@ -28,11 +28,21 @@ class SectionHeader: UICollectionReusableView {
         let stackView = UIStackView(arrangedSubviews: [seperator, title, subtitle])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
+        addSubview(stackView)
+        NSLayoutConstraint.activate([
+            seperator.heightAnchor.constraint(equalToConstant: 1),
+            
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+        ])
         
+        stackView.setCustomSpacing(10, after: seperator)
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("Stop trying to make storyboards happen")
     }
     
     
