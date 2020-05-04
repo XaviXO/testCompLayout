@@ -48,6 +48,18 @@ class AppsViewController: UIViewController {
                 return self.configure(FeaturedCell.self, with: app, for: indexPath)
             }
         }
+        dataSource?.supplementaryViewProvider = { [weak self]
+            collectionView, kind, indexPath in
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseIdentifier, for: indexPath) as? SectionHeader else {
+                return nil
+            }
+            guard let firstApp = self?.dataSource?.itemIdentifier(for: indexPath) else { return nil }
+            guard let section = self?.dataSource?.snapshot().sectionIdentifier(containingItem: firstApp) else { return nil }
+            if section.title.isEmpty { return nil }
+            sectionHeader.title.text = section.title
+            sectionHeader.subtitle.text = section.subtitle
+            return sectionHeader
+        }
     }
     
     func reloadData(){
