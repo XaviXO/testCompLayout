@@ -22,6 +22,7 @@ class AppsViewController: UIViewController {
         collectionView.backgroundColor = .systemBackground
         view.addSubview(collectionView)
         
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseIdentifier)
         collectionView.register(FeaturedCell.self, forCellWithReuseIdentifier: FeaturedCell.reusableIdentifier)
         collectionView.register(MediumTableCell.self, forCellWithReuseIdentifier: MediumTableCell.reusableIdentifier)
         
@@ -95,6 +96,10 @@ class AppsViewController: UIViewController {
         let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: layoutGroupSize, subitems: [layoutItem])
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
         layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
+        
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(80))
+        let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
         return layoutSection
     }
 }
